@@ -1,0 +1,34 @@
+{
+  "name": "nodejs-docs-samples-kms",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Google Inc.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "lint": "samples lint",
+    "pretest": "npm run lint",
+    "system-test": "ava -T 20s --verbose system-test/*.test.js",
+    "test": "npm run system-test"
+  },
+  "dependencies": {
+    "googleapis": "19.0.0",
+    "safe-buffer": "5.0.1",
+    "yargs": "7.1.0"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.4.7",
+    "ava": "0.19.1",
+    "proxyquire": "1.7.11"
+  },
+  "cloud-repo-tools": {
+    "requiresKeyFile": true,
+    "requiresProjectId": true
+  }
+}
