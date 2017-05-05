@@ -1,6 +1,11 @@
-FROM node:7.10.0
-ADD kms/ /opt/kms
-RUN cd /opt/kms && yarn
-WORKDIR /opt/run
-ENTRYPOINT ["/opt/kms/entrypoint"]
+FROM golang:1.7.5
+
+RUN mkdir -p /go/src/app
+WORKDIR /go/src/app
+
+ADD ./kms /go/src/app
+RUN go-wrapper download
+RUN go-wrapper install
+
+ENTRYPOINT ["/go/src/app/entrypoint"]
 CMD []
