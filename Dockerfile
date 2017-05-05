@@ -7,5 +7,7 @@ ADD ./kms /go/src/app
 RUN go-wrapper download
 RUN go-wrapper install
 
+WORKDIR /opt/run
+
 ENTRYPOINT ["/go/src/app/entrypoint"]
 CMD []

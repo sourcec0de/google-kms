@@ -51,7 +51,7 @@ func main() {
     log.Fatalf("Invalid command: %s. Must be 'encrypt' or 'decrypt'.", command)
   }
 
-  if err := ioutil.WriteFile(outPath, output, 0600); err != nil {
+  if err := ioutil.WriteFile(outPath, output, 0644); err != nil {
     log.Fatalf("Error writing to file %q: %v", outPath, err)
   }
 }
